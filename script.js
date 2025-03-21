@@ -37,7 +37,7 @@ async function getweatherData(city) {
     let response= await fetch(apiUrl);
     console.log(response);
     if(!response.ok){
-        throw new Error("could not fetch weather data,Please enter a city");
+        throw new Error("could not fetch weather data,Please enter a  correct city");
     }
     return await response.json();
 }

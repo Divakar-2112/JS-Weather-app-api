@@ -41,12 +41,13 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 .cityinput {
     padding: 10px;
     border: none;
-    border-radius: 5px 0 0 5px;
+    border-radius: 25px;
     font-size: 1.2em;
     width: 70%;
 }
@@ -54,7 +55,7 @@ h1 {
 .citybtn {
     padding: 10px;
     border: none;
-    border-radius: 0 5px 5px 0;
+    border-radius: 25px ;
     background-color: #0072ff;
     color: white;
     font-size: 1.2em;
@@ -86,15 +87,23 @@ h1 {
 }
 
 .weatheremoji {
-    font-size: 4em;
-    margin: 10px 0;
+    font-size: 5rem;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin: 0px;
 }
 
 .errordisplay {
-    color: #ff4d4d;
-    font-size: 1.2em;
-    margin-top: 10px;
+    color: #ff4d4d; 
+    font-size: 2.2em; 
+    font-weight: bold;
+    text-align: center; 
+    border-radius: 5px; 
+    width: 100%; 
+    text-shadow: 0px 4px 10px rgba(12, 5, 5, 0.76);
 }
+
     </style>
 </head>
 
@@ -112,7 +121,7 @@ h1 {
             <p class="descdisplay"></p>
             <p class="Windspeed"></p>
             <p class="winddeg"></p>
-            <p class="weatheremoji"></p>
+            <span class="weatheremoji"></span>
             <p class="errordisplay"></p>
             <p class="timezone"></p>
         </div>
