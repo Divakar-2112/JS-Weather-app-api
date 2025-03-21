@@ -6,7 +6,7 @@ let apiKey="0060d567c75cfab42bb6c4e133a40fcc";
 document.addEventListener("DOMContentLoaded",()=>{
     getweatherData("chennai")
     .then(displayWeatherInfo)
-    .catch(displayError)
+    .catch(displayError(message))
 
 });
 weatherForm.addEventListener("submit", async event=>{
@@ -37,7 +37,7 @@ async function getweatherData(city) {
     let response= await fetch(apiUrl);
     console.log(response);
     if(!response.ok){
-        throw new Error("could not fetch weather data");
+        throw new Error("could not fetch weather data,Please enter a city");
     }
     return await response.json();
 }
@@ -96,7 +96,17 @@ function getweatherEmoji(weatherId){
 }
 function displayError(message){
     let errorDisplay=document.querySelector(".errordisplay");
-        errorDisplay.textContent=message;    
+        errorDisplay.textContent=message;   
+        
+        document.querySelector(".citydisplay").textContent="";
+        document.querySelector(".tempdisplay").textContent="";
+        document.querySelector(".humiditydispaly").textContent="";
+        document.querySelector(".descdisplay").textContent="";
+        document.querySelector(".Windspeed").textContent="";
+        document.querySelector(".winddeg").textContent="";
+        document.querySelector(".weatheremoji").textContent="";
+        document.querySelector(".timezone").textContent="";
+        
 }
 
 function formatDateWithTimezone(offsetInSeconds) {
